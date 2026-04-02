@@ -970,8 +970,8 @@ function! s:fim_try_hint(pos_x, pos_y)
     " Check if the completion is cached (and update LRU order)
     let l:raw = s:cache_get(l:hash)
 
-    " ... or if there is a cached completion nearby (10 characters behind)
-    " Looks at the previous 10 characters to see if a completion is cached. If one is found at (x,y)
+    " ... or if there is a cached completion nearby (128 characters behind)
+    " Looks at the previous 128 characters to see if a completion is cached. If one is found at (x,y)
     " then it checks that the characters typed after (x,y) match up with the cached completion result.
     if l:raw == v:null
         let l:pm = l:prefix . l:middle
